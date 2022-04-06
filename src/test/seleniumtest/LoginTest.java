@@ -5,6 +5,7 @@ import com.company.base.BrowserType;
 import com.company.base.DriverContext;
 import com.company.base.FrameworkInitialize;
 import com.company.utilities.ExcelUtil;
+import com.company.utilities.LogUtil;
 import pages.HomePage;
 import pages.LoginPage;
 import org.junit.Before;
@@ -20,6 +21,11 @@ public class LoginTest extends FrameworkInitialize {
 
     @Before
     public  void Initialize(){
+        LogUtil logUtil = new LogUtil();
+
+        logUtil.createLogFile();
+        logUtil.write("Framework initialized");
+
         initializeBrowser(BrowserType.Chrome);
         DriverContext.Browser.goToUrl("http://eaapp.somee.com/");
          try {

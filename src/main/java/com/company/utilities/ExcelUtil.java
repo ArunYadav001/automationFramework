@@ -27,6 +27,10 @@ public class ExcelUtil {
         ColumnDictionary();
     }
 
+    public static  String ReadCell(String columnName, int row){
+        return ReadCell(GetCell(columnName),row);
+    }
+
     //Returns the Number of Rows
     public static int RowCount()
     {
